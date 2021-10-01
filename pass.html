@@ -7,3 +7,56 @@
 <body>
 
 <h2>Pass phrase by Ravichandrika Annadanam</h2>
+<form>
+
+    <label for="secretphase"> Enter the Secret Phrase </label>
+
+    <input type ="password" id="secretphase" value ="Let me in"> <br>
+
+
+
+    <label for="phrase"> Enter the Phrase </label>
+
+    <input type ="text" id="phrase"  autofocus> <br>
+
+
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase"/>
+
+</form>
+<p> The text needs to be replaced </p>
+
+<div id="result"></div>
+
+<script> 
+
+var correct=0,wrong=0;
+
+function processPhrase (){
+
+    
+
+    spValue = document.getElementById("secretphase").value
+
+    phraseValue = document.getElementById("phrase").value
+
+    resultDiv = document.getElementById("result")
+
+     if(spValue==phraseValue){
+
+        alert("Access allowed");
+
+    correct=correct+1;
+
+    }else{
+
+        alert("Access denied");
+
+        wrong=wrong+1;
+
+    }
+    resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Worng count: "+wrong;
+}
+</script>
+</body>
+</html> 
