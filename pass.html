@@ -57,6 +57,22 @@ function processPhrase (){
     }
     resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Worng count: "+wrong;
 }
+let usingImage = 1
+        function newImage(img) {
+            debugger;
+            switch (usingImage) {
+                case 1:
+                    document.getElementById("animals").src = "Antelope.jpg"
+                    usingImage++;
+                    break;
+                case 2:
+                    document.getElementById("animals").src = "Dog.jpg"
+                    usingImage++;
+                    break;
+                default:
+                    usingImage = 0;
+                    document.getElementById("animals").src = "Alpaca.jpg"
+                    break;
 </script>
 </body>
 </html> 
