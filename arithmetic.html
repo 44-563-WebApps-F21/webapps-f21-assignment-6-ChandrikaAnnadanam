@@ -80,33 +80,27 @@ value="divide">
 <input type="button" onclick="processRadio()" value="Calculate the value">
 
 </form>
+<div id="radio_result"></div>
 
+<div id="result"></div>
 
+<script> 
 
-<script>
-
-  function processRadio() {
-
-    base=document.getElementById("base").value
-
-exponent=document.getElementById("exponent").value
-
-add = document.getElementById("plus").checked
-
-sub = document.getElementById("minus").checked
-
-mul = document.getElementById("times").checked
-
-divi = document.getElementById("divide").checked
-
-out=document.getElementById("result")
-
-if (add == true){
-        result= +base + +exponent    }    else if ( sub == true){        result= base - exponent    }    else if (mul == true){       result= base * exponent    }    else if (divi == true){        result= base / exponent    }    out=document.getElementById("result").innerHTML="The Result is : "+result      }  </script></body></html> 
-
-    
+function powers(){
+   
+    let result= " "
+    console.log("Getting form values")
+     baseValue = document.getElementById("base").value
+     expoValue = document.getElementById("expo").value
+     resultDiv = document.getElementById("result")
+   
+    for(i=1;i<=expoValue;i++){
+        result =result+ Math.pow(baseValue,i)+ " "
+        resultDiv.innerHTML="powers of base are: "+ result
+            
+    }
 }
 </script>
 
 </body>
-</html> 
+</html>
