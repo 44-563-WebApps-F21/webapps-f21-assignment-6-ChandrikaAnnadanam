@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-<title>Arithmetic page</title>
-<body>
-    <h1>Computed by Ravichandrika Annadanam</h1>
-<form>
-    <label for="form1_base">Enter a base</label>
-    <input type ="number" id="form1_base" name="form1_base" min=10 max=50 step=2 value=30> <br>
 
-    <label for="form1_exponent">Enter an exponent</label>
-    <input type ="number" id="form1_exponent" name="form1_exponent" min=2 autofocus> <br>
+<head>
+    <title>The Arithimetic Page</title>
+</head>
+ 
+<body>
+<h1>Ravichandrika Annadanam Computes</h1>
+<h2>Getting the Inputs here</h2>
+
+<form>
+    <label for="form1_age">Enter a base </label>
+    <input type ="number" id="base" name="form1_base" min=10 max=50 step=2 value=10> <br>
+
+    <label for="form1_nick">Enter an exponent </label>
+    <input type ="text" id="exponent" name="form1_exponent" autofocus> <br>
 
     <input type="button" onclick="powers()" value="Compute">
 </form>
@@ -16,91 +22,65 @@
 
 <p id="result">This text will be replaced </p>
 
-<script> 
-
-function powers(){
-    var result=" ";
-    console.log("Getting form values")
-    base = document.getElementById("form1_base").value
-    exponent = document.getElementById("form1_exponent").value
-    confirmed = confirm("Are these the values? "+ base +" and "+ exponent )
-    for(let i=0;i<exponent;i++)
-    {
-        result=result+Math.pow(base,i)+" ";
-    }
-    console.log(result);
-    out = document.getElementById("result")
-    out.innerHTML = "Powers of the base are:"+ result;
-}
-
-out=document.getElementById("result").innerHTML="Powers of "+base+" are : "+result
-
-
-
-}
-
-</script>
-
-<br>
-
 <form>
+    <input type="radio" id="rg1_plus" name="color" value="plus"   
+          checked onclick="processRadio()" >
+        <label for="rg1_red">+</label></br>
 
-<input type="radio" id="plus" name="Arthimetic" value="plus"   
-
-  checked >
-
-<label for="plus">+</label></br>
-
-
-
-<input type="radio" id="minus" name="Arthimetic" 
-
-   value="minus">
-
-<label for="minus">-</label></br>
+        <input type="radio" id="rg1_minus" name="color" value="minus"   
+        checked onclick="processRadio()">
+        <label for="rg1_red">-</label></br>
 
 
-
-<input type="radio" id="times" name="Arthimetic"   
-
-   value="times">
-
-<label for="times">*</label></br>
+      <input type="radio" id="rg1_times" name="color" value="times"   
+      checked onclick="processRadio()">
+       <label for="rg1_red">*</label></br>
 
 
-
-<input type="radio" id="divide" name="Arthimetic"   
-
-value="divide">
-
-<label for="divide">/</label></br>
-
-
-
-<input type="button" onclick="processRadio()" value="Calculate the value">
+    <input type="radio" id="rg1_divide" name="color" value="divide"   
+    checked onclick="processRadio()">
+     <label for="rg1_red">/</label></br>
 
 </form>
-<div id="radio_result"></div>
-
-<div id="result"></div>
+<p id="RadioResult">This text will be replaced </p>
 
 <script> 
 
 function powers(){
-   
-    let result= " "
     console.log("Getting form values")
-     baseValue = document.getElementById("base").value
-     expoValue = document.getElementById("expo").value
-     resultDiv = document.getElementById("result")
-   
-    for(i=1;i<=expoValue;i++){
-        result =result+ Math.pow(baseValue,i)+ " "
-        resultDiv.innerHTML="powers of base are: "+ result
-            
+    base = document.getElementById("base").value
+    exponent = document.getElementById("exponent").value
+    var result="Powers of "+base +" are:"
+    
+    r = 1
+    out = document.getElementById("result")
+    for(i=1; i<=exponent; i++){
+        r *= base;
+        result += r + " "
     }
+    out.innerHTML = result
+}
+
+function processRadio(){
+
+    base = document.getElementById("base").value
+    exponent = document.getElementById("exponent").value
+    plus = document.getElementById("rg1_plus").checked
+    minus = document.getElementById("rg1_minus").checked
+    times = document.getElementById("rg1_times").checked
+    divide = document.getElementById("rg1_divide").checked
+    result = document.getElementById("RadioResult")
+
+    if(plus)
+    result.innerHTML = +base + +exponent
+    else if(minus)
+    result.innerHTML = base - exponent
+    else if(times)
+    result.innerHTML = base * exponent
+    else
+    result.innerHTML = base / exponent
+
 }
 </script>
-
 </body>
-</html>
+</html> 
