@@ -31,6 +31,79 @@ function powers(){
     console.log(result);
     out = document.getElementById("result")
     out.innerHTML = "Powers of the base are:"+ result;
+}
+
+out=document.getElementById("result").innerHTML="Powers of "+base+" are : "+result
+
+
+
+}
+
+</script>
+
+<br>
+
+<form>
+
+<input type="radio" id="plus" name="Arthimetic" value="plus"   
+
+  checked >
+
+<label for="plus">+</label></br>
+
+
+
+<input type="radio" id="minus" name="Arthimetic" 
+
+   value="minus">
+
+<label for="minus">-</label></br>
+
+
+
+<input type="radio" id="times" name="Arthimetic"   
+
+   value="times">
+
+<label for="times">*</label></br>
+
+
+
+<input type="radio" id="divide" name="Arthimetic"   
+
+value="divide">
+
+<label for="divide">/</label></br>
+
+
+
+<input type="button" onclick="processRadio()" value="Calculate the value">
+
+</form>
+
+
+
+<script>
+
+  function processRadio() {
+
+    base=document.getElementById("base").value
+
+exponent=document.getElementById("exponent").value
+
+add = document.getElementById("plus").checked
+
+sub = document.getElementById("minus").checked
+
+mul = document.getElementById("times").checked
+
+divi = document.getElementById("divide").checked
+
+out=document.getElementById("result")
+
+if (add == true){
+        result= +base + +exponent    }    else if ( sub == true){        result= base - exponent    }    else if (mul == true){       result= base * exponent    }    else if (divi == true){        result= base / exponent    }    out=document.getElementById("result").innerHTML="The Result is : "+result      }  </script></body></html> 
+
     
 }
 </script>
