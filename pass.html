@@ -64,33 +64,9 @@ function processPhrase (){
     <img id="myImg" style="width: 200px;height: 200px;" alt="Alpaca" onclick="newImage()" src="Images/Alpaca.jpg">
 </div>
 <script> 
-let correct = 0,wrong = 0;
-function processPhrase(){
-   var secret = document.getElementById("pass").value
-   var check = document.getElementById("check").value
-   result.style.color = "red"
-   out = document.getElementById("result")
-   if(wrong<3){
-    if(secret == check)
-    {
-        correct = correct+1;
-        alert("Access allowed")
-        out.innerHTML = "Correct Count : "+correct
-    }
-    else{
-        wrong = wrong+1;
-        alert("Access denied")
-        out.innerHTML = "Wrong Count : "+wrong
-    }
-   }
-   else{
-    document.getElementById("button").onclick = access()
-   }
-  
-}
-function access(){
-    alert("Account Locked")
-}
+
+
+
 let usingImage = 1
    function newImage(){
     switch(usingImage){
