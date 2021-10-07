@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
         <title>Pass phrase</title>
     </head>
  
@@ -57,32 +57,35 @@ function processPhrase (){
     }
     resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Wrong count: "+wrong;
 }
- 
- var usingImage=1;
- function newImage(){
-
- switch(usingImage){
-
- case 1:
-
- document.getElementById("Images").src="Antelope.jpg"
- usingImage=2
- break   
-
- case 2:
-
- document.getElementById("Images").src="Dog.jpg"
- usingImage=3
- break  
-
- case 3:
-
- document.getElementById("Images").src="Alpaca.jpg"
- usingImage=1
- break  
- }
-} 
-
 </script>
+<br>
+<div class="container">
+    <img src="https://cdn.britannica.com/29/150929-050-547070A1/lion-Kenya-Masai-Mara-National-Reserve.jpg"  height="200" width="200" onclick="newImage()" id="image">
+<script>
+        var usingImage=1;
+          function newImage(){
+            
+              switch (usingImage) {
+                  case 1:
+                     document.getElementById("Images").src="Imagesjpg";
+                      usingImage=2;
+                      break;
+                  case 2:
+                  document.getElementById("image").src="images/narwhal.jpg";
+                      usingImage=3;
+                      break;
+                  case 3:
+                  document.getElementById("image").src="images/umbrellabird.jpg";
+                      usingImage=4;
+                      break;
+                  default :
+                  document.getElementById("image").src="https://cdn.britannica.com/s:1500x700,q:85/59/172259-004-1C459067/royla-antelope.jpg"
+                  usingImage=1;
+                  break;
+              }
+            }
+</script>
+</div>
+
 </body>
 </html>
