@@ -57,22 +57,32 @@ function processPhrase (){
     }
     resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Wrong count: "+wrong;
 }
-let usingImage = 1
-        function newImage(img) {
-            debugger;
-            switch (usingImage) {
-                case 1:
-                    document.getElementById("Images").src = "Antelope.jpg"
-                    usingImage++;
-                    break;
-                case 2:
-                    document.getElementById("Images").src = "Dog.jpg"
-                    usingImage++;
-                    break;
-                default:
-                    usingImage = 0;
-                    document.getElementById("Images").src = "Alpaca.jpg"
-                    break;
+ 
+ var usingImage=1;
+ function newImage(){
+
+ switch(usingImage){
+
+ case 1:
+
+ document.getElementById("Images").src="Antelope.jpg"
+ usingImage=2
+ break   
+
+ case 2:
+
+ document.getElementById("Images").src="Dog.jpg"
+ usingImage=3
+ break  
+
+ case 3:
+
+ document.getElementById("Images").src="Alpaca.jpg"
+ usingImage=1
+ break  
+ }
+}
+
 </script>
 </body>
-</html> 
+</html>
