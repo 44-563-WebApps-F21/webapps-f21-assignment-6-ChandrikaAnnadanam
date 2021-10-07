@@ -41,6 +41,7 @@ function processPhrase (){
     phraseValue = document.getElementById("phrase").value
 
     resultDiv = document.getElementById("result")
+    if(wrong<3){
 
      if(spValue==phraseValue){
 
@@ -56,6 +57,13 @@ function processPhrase (){
 
     }
     resultDiv.innerHTML="Correct count: "+correct+'<br>'+" Wrong count: "+wrong;
+}else{
+    document.getElementById("result").onclick=accessLock();
+}
+
+}
+function accessLock(){
+    alert("account Locked");
 }
 </script>
 <br>
